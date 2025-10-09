@@ -1,8 +1,9 @@
 import express from 'express';
+import cors from 'cors'
 
 // Routes imports
-import productsRouter from './routes/productsRouter'
-import ordersRouter from './routes/ordersRouter'
+import productsRouter from './routes/productsRouter';
+import ordersRouter from './routes/ordersRouter';
 import db from './config/db';
 
 export async function connectDB() {
@@ -19,6 +20,8 @@ export async function connectDB() {
 connectDB()
 
 const app = express();
+
+app.use( cors() )
 
 // Parses JSON requests with payloads, and populates req.body
 app.use(express.json())

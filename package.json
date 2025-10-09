@@ -15,10 +15,13 @@
   "dependencies": {
     "@sequelize/core": "^7.0.0-alpha.46",
     "@sequelize/postgres": "^7.0.0-alpha.46",
+    "@tailwindcss/vite": "^4.1.14",
+    "cors": "^2.8.5",
     "dotenv": "^17.2.3",
     "express": "^5.1.0",
     "sequelize": "^6.37.7",
-    "sequelize-typescript": "^2.1.6"
+    "sequelize-typescript": "^2.1.6",
+    "tailwindcss": "^4.1.14"
   },
   "devDependencies": {
     "@types/express": "^5.0.3",

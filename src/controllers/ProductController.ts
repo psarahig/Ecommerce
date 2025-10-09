@@ -47,9 +47,9 @@ class ProductController {
         
         try {
             const productData: Partial<ProductInterface> = req.body;
-            const { name, description='', price, active, stock } = productData;
+            const { name, description='', image, price, active, stock } = productData;
             const product: ProductInterface = await Product.create({
-                name, description, price, active, stock
+                name, description, image, price, active, stock
             })
 
             return res.status(201).json({
@@ -72,7 +72,7 @@ class ProductController {
         try {
             const productData: Partial<ProductInterface> = req.body;
             const { id } = req.params;
-            const { name, description='', price, active, stock } = productData;
+            const { name, description='', image, price, active, stock } = productData;
 
             // Modify given a product id
             const product = await Product.findByPk(id);
@@ -87,6 +87,7 @@ class ProductController {
             // Modify all posible attributes
             if(name !== undefined) product.name = name;
             if(description !== undefined) product.description = description;
+            if(image !== undefined) product.image = image;
             if(price !== undefined) product.price = price;
             if(active !== undefined) product.active = active;
             if(stock !== undefined) product.stock = stock;

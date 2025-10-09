@@ -14,14 +14,14 @@ class Product extends Model {
   declare id: number;
 
   @Column({
-    type: DataType.STRING(255),
+    type: DataType.STRING(18),
   })
   declare name: string;
 
-  /* @Column({
-    type: DataType.STRING(255),
+  @Column({
+    type: DataType.STRING(25),
   })
-  declare image: string; */
+  declare image: string;
 
   @AllowNull
   @Column(DataType.TEXT)
